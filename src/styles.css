@@ -1,7 +1,7 @@
 /**  Basic Page CSS **/
 body {
   font-weight: 200;
-  background-color: #337ab7;
+  background-color: #3C4252;
 }
 
 header a,
@@ -15,7 +15,7 @@ footer {
 
 .bg-primary,
 .btn-primary {
-  background-color: #377bb5 !important;
+  background-color: #3C4252 !important;
   border: inherit;
 }
 
@@ -42,7 +42,7 @@ footer {
 
 .appointment-list .pet-name {
   font-weight: 600;
-  color: #337ab7;
+  color: #3C4252;
   font-size: 1.3em;
   line-height: 100%;
 }
