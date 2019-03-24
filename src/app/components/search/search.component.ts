@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   @Output() queryEvt = new EventEmitter<string>();
   @Output() orderEvt = new EventEmitter<string>();
 
+  query="";
+
   handleQuery(query: string) {
     this.queryEvt.emit(query);
   }
@@ -30,3 +32,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {}
 }
+
+// export interface SearchInterface {
+//   query: String;
+// }
+// product: SearchInterface;
