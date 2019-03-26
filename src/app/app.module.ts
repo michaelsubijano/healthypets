@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app-component/app.component';
+import { DataService } from './data.service';
 import { AddComponent } from './components/add/add.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListComponent } from './components/list/list.component';
@@ -22,7 +23,7 @@ import { ListComponent } from './components/list/list.component';
     FormsModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
