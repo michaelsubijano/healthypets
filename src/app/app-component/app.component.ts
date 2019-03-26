@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { without, findIndex } from 'lodash';
+import { environment } from '../environments/environment';
 
 library.add(faTimes, faPlus);
 
@@ -97,8 +98,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    dataUrl = environment.dataUrl;
     this.lastIndex = 0;
-    this.http.get<Object[]>('../assets/data.json').subscribe(data => {
+    this.http.get<Object[]>(dataUrl).subscribe(data => {
       this.theList = data.map((item: any) => {
         item.aptId = this.lastIndex++;
         return item;
