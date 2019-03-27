@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { without, findIndex } from 'lodash';
-import { DataService } from '../data.service';
+import { environment } from '../../environments/environment';
 
 library.add(faTimes, faPlus);
 
@@ -97,12 +97,10 @@ export class AppComponent implements OnInit {
     this.orderType = 'asc';
   }
 
-  constructor(private dataService: DataService) { }
-
   ngOnInit(): void {
-    let url = this.dataUrl;
+    let dataUrl = environment.dataUrl;
     this.lastIndex = 0;
-    this.http.get<Object[]>(url).subscribe(data => {
+    this.http.get<Object[]>(dataUrl).subscribe(data => {
       this.theList = data.map((item: any) => {
         item.aptId = this.lastIndex++;
         return item;
